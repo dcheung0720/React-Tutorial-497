@@ -1,6 +1,6 @@
 .classes{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-columns: repeat(auto-fill, 17rem);
 }
 
 
