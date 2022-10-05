@@ -10,6 +10,7 @@ import {useJsonQuery} from './utilities/fetch.js';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {Component, useState} from "react";
 import MenuPage from "./Components/MenuPage.js";
+import CoursePage from './Components/CoursePage';
 
 
 const queryClient = new QueryClient();
@@ -22,6 +23,13 @@ const Main = () =>{
       Spring : []
   };
   //react State
+  const [selected, setSelected] = useState([]);
+
+  const toggleSelected = (item) => setSelected(
+    selected.includes(item)
+    ? selected.filter(x => x !== item)
+    : [...selected, item]
+  );
   const [selection, setSelection] = useState(() => Object.keys(courses)[0]);
   if (error) return <h1>Error loading user data: {`${error}`}</h1>;
   if (isLoading) return <h1>Loading user data...</h1>;
@@ -34,7 +42,8 @@ const Main = () =>{
   return <div className = "container">  
     {Banner(schedule.title)}
     <MenuPage terms = {Object.keys(courses)} selection = {selection} setSelection = {setSelection} ></MenuPage>
-    {CourseList(courses[selection])}
+    {/* {CourseList(courses[selection])} */}
+    {CoursePage(courses[selection], selected, toggleSelected)}
 </div>;
 }
 
