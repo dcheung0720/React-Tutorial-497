@@ -24,12 +24,17 @@ const Main = () =>{
   };
   //react State
   const [selected, setSelected] = useState([]);
+  const [open, setOpen] = useState(false);
+  //Modal
+  const openModal = () => setOpen(true);
+  const closeModal = () => setOpen(false);
 
   const toggleSelected = (item) => setSelected(
     selected.includes(item)
     ? selected.filter(x => x !== item)
     : [...selected, item]
   );
+
   const [selection, setSelection] = useState(() => Object.keys(courses)[0]);
   if (error) return <h1>Error loading user data: {`${error}`}</h1>;
   if (isLoading) return <h1>Loading user data...</h1>;
@@ -41,9 +46,9 @@ const Main = () =>{
 
   return <div className = "container">  
     {Banner(schedule.title)}
-    <MenuPage terms = {Object.keys(courses)} selection = {selection} setSelection = {setSelection} ></MenuPage>
+    <MenuPage terms = {Object.keys(courses)} selection = {selection} setSelection = {setSelection} openModal = {openModal}></MenuPage>
     {/* {CourseList(courses[selection])} */}
-    {CoursePage(courses[selection], selected, toggleSelected)}
+    {CoursePage(courses[selection], selected, toggleSelected, open, setOpen, openModal, closeModal, schedule)}
 </div>;
 }
 

@@ -10,11 +10,14 @@ import {useState} from "react";
     </div>
   );
   
-  const MenuSelector = ({terms, selection, setSelection}) => (
+  const MenuSelector = ({terms, selection, setSelection, openModal}) => (
+    <div>
     <div className="btn-group">
       { 
         terms.map(term => <MenuButton key={term} term={term} selection={selection} setSelection={setSelection} />)
       }
+    </div>
+    <button style = {{float:"right", marginRight: "200px",backgroundColor: "green"}} className="btn btn-outline-dark" onClick={openModal}><i className="bi bi-cart4"></i></button>
     </div>
   );
   
@@ -24,10 +27,10 @@ import {useState} from "react";
     </div>
   );
   
-  const MenuPage = ({terms, selection, setSelection}) => {
+  const MenuPage = ({terms, selection, setSelection, openModal}) => {
     return (
       <div>
-        <MenuSelector terms = {terms} selection={selection} setSelection={setSelection} />
+        <MenuSelector terms = {terms} selection={selection} setSelection={setSelection} openModal = {openModal} />
         <Menu terms = {terms} selection={selection} />
       </div>
     );
