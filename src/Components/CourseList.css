@@ -24,10 +24,6 @@
     width: 100%;
     object-fit: cover;
 }
-#selected {
-    background-color:lemonchiffon;
-    color: green;
-  }
 
 
 /* .card.m-1.p-2 {

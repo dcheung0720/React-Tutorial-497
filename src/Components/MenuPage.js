@@ -17,7 +17,7 @@ import {useState} from "react";
         terms.map(term => <MenuButton key={term} term={term} selection={selection} setSelection={setSelection} />)
       }
     </div>
-    <button style = {{float:"right", marginRight: "200px",backgroundColor: "green"}} className="btn btn-outline-dark" onClick={openModal}><i className="bi bi-cart4"></i></button>
+    <button style = {{float:"right", marginRight: "100px",backgroundColor: "green"}} className="btn btn-outline-dark" onClick={openModal}><i className="bi bi-cart4"></i></button>
     </div>
   );
   
