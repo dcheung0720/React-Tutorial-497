@@ -3,7 +3,7 @@ import CourseList from "./CourseList";
 import Modal from './Modal';
 import Cart from './Cart';
 
-const CoursePage = (lists, selected, toggleSelected, open, setOpen, openModal, closeModal, schedule) => {
+const CoursePage = (lists, selected, toggleSelected, open, closeModal, schedule) => {
     return (
       <div>
       <Modal open={open} close={closeModal}></Modal>

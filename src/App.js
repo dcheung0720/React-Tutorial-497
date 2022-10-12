@@ -11,6 +11,8 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {Component, useState} from "react";
 import MenuPage from "./Components/MenuPage.js";
 import CoursePage from './Components/CoursePage';
+import Dispatcher from './Components/Dispatcher';
+import Navigation from "./Components/Navigation";
 
 
 const queryClient = new QueryClient();
@@ -44,11 +46,11 @@ const Main = () =>{
   courses["Winter"] = Object.entries(schedule.courses).filter(course => course[1].term === "Winter");  
   courses["Spring"] = Object.entries(schedule.courses).filter(course => course[1].term === "Spring"); 
 
+  //course definition
   return <div className = "container">  
     {Banner(schedule.title)}
     <MenuPage terms = {Object.keys(courses)} selection = {selection} setSelection = {setSelection} openModal = {openModal}></MenuPage>
-    {/* {CourseList(courses[selection])} */}
-    {CoursePage(courses[selection], selected, toggleSelected, open, setOpen, openModal, closeModal, schedule)}
+    <Dispatcher courses = {courses} selected = {selected} toggleSelected = {toggleSelected} open = {open}  closeModal = {closeModal} schedule = {schedule} selection = {selection}/>
 </div>;
 }
 

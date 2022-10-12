@@ -1,5 +1,6 @@
 import './CourseList.css'
 import { hasConflict} from '../utilities/times.js';
+import { Link } from 'react-router-dom';
 
 const CourseList = ({list, selected, toggleSelected}) =>{
     return(
@@ -11,13 +12,14 @@ const CourseList = ({list, selected, toggleSelected}) =>{
             backgroundColor: isDisabled? 'lightgrey' : isSelected ? 'lightgreen' : 'white'
         };
         return(
-        <div className="card m-1 p-2" style = {style}  onClick={isDisabled ? null : () => toggleSelected(id)} key = {id}> 
+        <div className="card m-1 p-2" style = {style}  onClick={isDisabled ? null : (e) => {toggleSelected(id); e.stopPropagation()}} key = {id}> 
             <div>
                 <div className = "top"><b style = {{fontSize: "25px"}}>{courses.term} {" CS "} {courses.number}</b></div>
                 <div className = "middle">{courses.title}</div> 
                 <hr></hr>
                 <div className = "bottom">{courses.meets}</div>
             </div>
+            <p style = {{alignSelf: "center"}}><Link onClick={(e) => e.stopPropagation()} to={`/edit/${id}`}>Edit</Link></p>
         </div>)})}
     </div>)
 }
