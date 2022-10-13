@@ -12,7 +12,6 @@ import {Component, useState} from "react";
 import MenuPage from "./Components/MenuPage.js";
 import CoursePage from './Components/CoursePage';
 import Dispatcher from './Components/Dispatcher';
-import Navigation from "./Components/Navigation";
 
 
 const queryClient = new QueryClient();
