@@ -11,8 +11,8 @@ const Dispatcher = ({courses, selected, toggleSelected, open, closeModal, schedu
   <BrowserRouter>
     {Navigation()}
     <Routes>
-      <Route path="/" element={CoursePage(courses[selection], selected, toggleSelected, open, closeModal, schedule)} />
-      <Route path= "/edit/:id" element={UserEditor(courses, selected)}>Form</Route>
+      <Route path="/" element={CoursePage(courses[selection], selected, toggleSelected, open, closeModal, schedule)}></Route>
+      <Route path= "/edit/:id" element={<UserEditor/>}></Route>
     </Routes>
   </BrowserRouter>)
 };
