@@ -2,7 +2,8 @@ import './CourseList.css'
 import { hasConflict} from '../utilities/times.js';
 import { Link } from 'react-router-dom';
 
-const CourseList = ({list, selected, toggleSelected}) =>{
+const CourseList = ({list, selected, toggleSelected, profile}) =>{
+    console.log(profile)
     return(
     <div className = "classes">
         {list.map(([id, courses]) => {
@@ -19,7 +20,7 @@ const CourseList = ({list, selected, toggleSelected}) =>{
                 <hr></hr>
                 <div className = "bottom">{courses.meets}</div>
             </div>
-            <p style = {{alignSelf: "center"}}><Link onClick={(e) => e.stopPropagation()} to={`/edit/${id}`}>Edit</Link></p>
+            <p style = {{alignSelf: "center"}}>{profile?.isAdmin &&  <Link onClick={(e) => e.stopPropagation()} to={`/edit/${id}`}>Edit</Link>}</p>
         </div>)})}
     </div>)
 }
