@@ -5,7 +5,6 @@ export const useFormData = (validator = null, values = {}) => {
 
   const change = (evt) => {
     const { id, value } = evt.target;
-    console.log(value)
     const error = validator ? validator(id, value) : '';
     evt.target.setCustomValidity(error);
     

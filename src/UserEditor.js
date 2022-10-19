@@ -36,10 +36,10 @@ const InputField = ({name, text, state, change}) => {
   const UserEditor = () => {
 
     const {id} = useParams();
-    console.log(id)
+
     const [update, result] = useDbUpdate(`courses/${id}`)
     const [state, change] = useFormData(validateUserData)
-
+    console.log(state)
     const submit = (evt) => {
       evt.preventDefault();
       if(!state.errors && state.values !== undefined){
