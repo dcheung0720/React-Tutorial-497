@@ -20,10 +20,10 @@ const database = getDatabase(firebase)
 
 if (process.env.REACT_APP_EMULATE) {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
-  connectDatabaseEmulator(database, "127.0.0.1", 9000);
+  connectDatabaseEmulator(database, "127.0.0.1", 9001);
 
   signInWithCredential(auth, GoogleAuthProvider.credential(
-    '{"sub": "qEvli4msW0eDz5mSVO6j3W7i8w1k", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
+    '{"sub": "sKLc3GakKp6MdkX3hrcOTsiimLDs", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
   ));
 }
 

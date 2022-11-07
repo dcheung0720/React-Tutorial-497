@@ -1,0 +1,16 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/Users/davidcheung/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+18:57:02.840 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+18:57:03.026 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9001
+18:57:03.514 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 123ms, init: 0ms
+18:57:03.620 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - react-tutorial-497-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+18:57:03.643 [NamespaceSystem-akka.actor.default-dispatcher-10] INFO com.firebase.core.namespace.NamespaceActor - react-tutorial-497 successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+18:57:36.102 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+18:57:36.111 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.Terminator$Terminator - 3 actors left to terminate: fake-server, react-tutorial-497-default-rtdb, react-tutorial-497
+18:57:36.118 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for react-tutorial-497
+18:57:36.118 [NamespaceSystem-akka.actor.default-dispatcher-46] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for react-tutorial-497-default-rtdb
+18:57:36.118 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for fake-server
+18:57:36.123 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
